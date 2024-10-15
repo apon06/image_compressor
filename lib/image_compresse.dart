@@ -201,8 +201,8 @@ class ImageCompresseState extends State<ImageCompresse> {
           IconButton(
             icon: const Icon(FontAwesomeIcons.github),
             onPressed: () async {
-              String privacyUrl = 'https://github.com/gokeihub/image_compressor';
-              final Uri url = Uri.parse(privacyUrl);
+              String codeUrl = 'https://github.com/gokeihub/image_compressor';
+              final Uri url = Uri.parse(codeUrl);
               if (await canLaunch(url.toString())) {
                 await launch(url.toString());
               } else {
