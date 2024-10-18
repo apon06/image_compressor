@@ -5,6 +5,7 @@ import 'image_compresse.dart';
 
 void main() {
   runApp(MaterialApp(home: MyApp()));
+  
 }
 
 class MyApp extends StatelessWidget {
