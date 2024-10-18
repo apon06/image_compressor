@@ -1,7 +1,8 @@
-// ignore_for_file: unused_element, use_build_context_synchronously, deprecated_member_use
+// ignore_for_file: deprecated_member_use, use_build_context_synchronously
 
 import 'dart:typed_data';
 import 'dart:io';
+import 'package:animated_button/animated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:image_picker/image_picker.dart';
@@ -14,14 +15,14 @@ import 'package:before_after/before_after.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ImageCompresse extends StatefulWidget {
-  const ImageCompresse({super.key});
+class ImageCompressorPage extends StatefulWidget {
+  const ImageCompressorPage({super.key});
 
   @override
-  ImageCompresseState createState() => ImageCompresseState();
+  ImageCompressorPageState createState() => ImageCompressorPageState();
 }
 
-class ImageCompresseState extends State<ImageCompresse> {
+class ImageCompressorPageState extends State<ImageCompressorPage> {
   List<File> _images = [];
   List<File> _compressedImages = [];
   double _quality = 50.0;
@@ -245,26 +246,28 @@ class ImageCompresseState extends State<ImageCompresse> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
+                AnimatedButton(
                   onPressed: _pickImages,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blueAccent,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 15,
-                    ),
+                  color: Colors.blue,
+                  duration: 5,
+                  height: 50,
+                  width: 150,
+                  child: const Text(
+                    'Pick Images',
+                    style: TextStyle(color: Colors.white),
                   ),
-                  child: const Text('Pick Images'),
                 ),
                 const SizedBox(width: 10),
-                ElevatedButton(
+                AnimatedButton(
                   onPressed: _compressImages,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 15),
+                  color: Colors.blue,
+                  duration: 5,
+                  height: 50,
+                  width: 150,
+                  child: const Text(
+                    'Compress Images',
+                    style: TextStyle(color: Colors.white),
                   ),
-                  child: const Text('Compress Images'),
                 ),
               ],
             ),
